@@ -7,9 +7,13 @@ const Image = require('../models/images');
 router.get('/', (req, res) => {
 	User.find({}, (err, foundUsers) => {
 		res.render('users/index.ejs', {
-			user: foundUsers
+			users: foundUsers
 		});
 	});
+});
+
+router.get('/new', (req, res) => {
+	res.render('users/new.ejs')
 });
 
 
