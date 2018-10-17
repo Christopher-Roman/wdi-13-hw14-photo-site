@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Images</title>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="images/new">Upload New Image</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h2>Image Library</h2>
+		<ul>
+			<% for (let i = 0; i < images.length; i++) { -%>
+				<li><a href="/images/<%=images[i]._id%>"><%=images[i].title%></a></li>
+			<% } -%>
+		</ul>
+	</main>
+</body>
+</html>

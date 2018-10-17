@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const imageSchema = new mongoose.Schema({
 	img: {type: String, required: true},
-	title: String,
+	title: {type: String, required: true},
 	author: {type: String, required:true}
 });
 
