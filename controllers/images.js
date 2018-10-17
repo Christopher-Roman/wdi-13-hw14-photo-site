@@ -11,5 +11,13 @@ router.get('/', (req, res) => {
 	});
 });
 
+router.get('/new', (req, res) => {
+	User.find({}, (err, allUsers) => {
+		res.render('images/new.ejs', {
+			users: allUsers
+		})
+	})
+})
+
 
 module.exports = router

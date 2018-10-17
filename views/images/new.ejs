@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create New Image</title>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<a href="/images">Image Library</a>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<form action="/images" method="POST">
+			<label>Image Author</label><br>
+			<select name="userId">
+				<% for (let i = 0; i < users.length; i++) { -%>
+					<option value="<%=users[i].id%>">
+						<%=users[i].name%>
+					</option>
+				<% } -%>
+			</select><br>
+			<label>Image Address</label><br>
+			<input type="text" name="img"><br>
+			<label>Image Title</label><br>
+			<input type="text" name="title"><br>
+			<input type="submit" value="Upload Image">
+		</form>
+	</main>
+</body>
+</html>
