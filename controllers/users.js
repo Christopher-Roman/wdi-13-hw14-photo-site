@@ -26,6 +26,15 @@ router.get('/:index', (req, res) => {
 	});
 });
 
+// Edit Route
+router.get('/:index/edit', (req, res) => {
+	User.findById(req.params.index, (err, editUser) => {
+		res.render('users/edit.ejs', {
+			user: editUser
+		})
+	})
+})
+
 // User Post route
 router.post('/', (req, res) => {
 	User.create(req.body, (err, createdUser) => {
@@ -39,8 +48,10 @@ router.post('/', (req, res) => {
 
 // User Put route
 router.put('/:index', (req, res) => {
-	User.findByIdAndUpdate(req.params.index)
-})
+	User.findByIdAndUpdate(req.params.index, req.body, (err, updatedUser) => {
+		res.redirect('/users')
+	});
+});
 
 
 // User Delete route
