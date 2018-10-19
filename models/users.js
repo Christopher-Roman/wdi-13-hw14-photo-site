@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const Images = require('./images');
 
 const userSchema = new mongoose.Schema({
-	name: {type: String, unique: true, required: true, dropDups: true},
+	name: String,
 	password: {type: String, required: true},
-	img: String
+	img: [Images.schema]
 });
 
 module.exports = mongoose.model('User', userSchema);

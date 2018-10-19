@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show Image</title>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/images">Index Page</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<img src="<%=image.img%>"><br>
+		<a href="/images/<%=image.id%>/edit">Edit Image</a>
+		<ul>
+			<li>Title: <%=image.title%></li>
+			<li>Author: <%=user.name%></li>
+		</ul>
+		<form action="/images/<%=image._id%>?_method=DELETE" method="POST">
+			<input type="submit" value="Delete Image">
+		</form>
+	</main>
+
+</body>
+</html>

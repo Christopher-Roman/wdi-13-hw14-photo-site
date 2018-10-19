@@ -16,11 +16,14 @@
 	<main>
 		<section>
 			<h2>User Profile</h2>
-			<ul>
-				<li>Name: <%=user.name%></li>
-			</ul>
+			Name: <%=user.name%>
 		</section>
 		<section>
+			<h2>User's Images</h2>
+			<% for (let i = 0; i < user.img.length; i++) { -%>
+				<a href=""><img src="<%=user.img[i].img%>"></a>
+			<% } -%>
+			<br>
 			<form action="/users/<%=user.id%>?_method=DELETE" method="POST">
 				<input type="submit" value="Delete User">
 			</form>

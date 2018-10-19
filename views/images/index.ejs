@@ -14,11 +14,9 @@
 	</header>
 	<main>
 		<h2>Image Library</h2>
-		<ul>
 			<% for (let i = 0; i < images.length; i++) { -%>
-				<li><a href="/images/<%=images[i]._id%>"><%=images[i].title%></a></li>
+				<a href="/images/<%=images[i]._id%>"><img src="<%=images[i].img%>"></a>
 			<% } -%>
-		</ul>
 	</main>
 </body>
 </html>

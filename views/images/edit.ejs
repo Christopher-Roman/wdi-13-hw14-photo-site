@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Image</title>
+</head>
+<body>
+	<header>
+		<h1>Edit <%=image.title%>'s Information</h1>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/images">Image Index</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h2>Image Attributes</h2>
+		<img src="<%=image.img%>">
+		<form action="/images/<%=image._id%>?_method=PUT" method="POST">
+			<select name="userId">
+				<% for (let i = 0; i < user.length; i++) { -%>
+					<option value="<%=user[i].id%>"
+						<%if(user[i]._id.toString() === usersImage._id.toString()) {%>
+							selected
+						<%}%>
+
+					><%=user[i].name%></option>
+				<% } -%>
+			</select><br>
+			<input type="text" name="title" value="<%=image.title%>"><br>
+			<input type="text" name="img" value="<%=image.img%>"><br>
+			<input type="submit" value="Update Picture">
+		</form>
+	</main>
+</body>
+</html>

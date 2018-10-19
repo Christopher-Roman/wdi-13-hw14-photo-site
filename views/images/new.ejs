@@ -15,7 +15,7 @@
 	<main>
 		<form action="/images" method="POST">
 			<label>Image Author</label><br>
-			<select name="userId">
+			<select name="authorId">
 				<% for (let i = 0; i < users.length; i++) { -%>
 					<option value="<%=users[i].id%>">
 						<%=users[i].name%>
